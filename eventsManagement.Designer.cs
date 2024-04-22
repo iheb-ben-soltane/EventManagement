@@ -1,4 +1,9 @@
-﻿namespace EventManagement
+﻿using System.Data;
+using System;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+
+namespace EventManagement
 {
     partial class eventsManagement
     {
@@ -6,6 +11,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private SqlConnection cn = new SqlConnection("Data Source=LAPTOP-G42PFL3;Initial Catalog=EventManagement;Integrated Security=True;");
 
         /// <summary>
         /// Clean up any resources being used.
@@ -33,15 +39,12 @@
             this.EventName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.CustomerName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.VenueId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.VenueName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CustomerId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Status = new System.Windows.Forms.TextBox();
             this.Date = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.Duration = new System.Windows.Forms.TextBox();
@@ -50,6 +53,9 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.Status = new System.Windows.Forms.ComboBox();
+            this.CustomerName = new System.Windows.Forms.ComboBox();
+            this.VenueName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +78,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1244, 398);
+            this.dataGridView1.Size = new System.Drawing.Size(1249, 398);
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -111,17 +117,6 @@
             this.label2.Text = "CustomerName";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // CustomerName
-            // 
-            this.CustomerName.BackColor = System.Drawing.Color.Azure;
-            this.CustomerName.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.CustomerName.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerName.Location = new System.Drawing.Point(164, 601);
-            this.CustomerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.Size = new System.Drawing.Size(175, 30);
-            this.CustomerName.TabIndex = 34;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -154,17 +149,6 @@
             this.label4.Size = new System.Drawing.Size(125, 26);
             this.label4.TabIndex = 39;
             this.label4.Text = "VenueName";
-            // 
-            // VenueName
-            // 
-            this.VenueName.BackColor = System.Drawing.Color.Azure;
-            this.VenueName.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.VenueName.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VenueName.Location = new System.Drawing.Point(1127, 518);
-            this.VenueName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.VenueName.Name = "VenueName";
-            this.VenueName.Size = new System.Drawing.Size(175, 30);
-            this.VenueName.TabIndex = 38;
             // 
             // label5
             // 
@@ -200,17 +184,6 @@
             this.label6.TabIndex = 43;
             this.label6.Text = "Duration";
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // Status
-            // 
-            this.Status.BackColor = System.Drawing.Color.Azure;
-            this.Status.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.Status.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Status.Location = new System.Drawing.Point(1127, 609);
-            this.Status.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(175, 30);
-            this.Status.TabIndex = 42;
             // 
             // Date
             // 
@@ -325,13 +298,69 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-
+            // 
+            // Status
+            // 
+            this.Status.BackColor = System.Drawing.Color.Azure;
+            this.Status.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Status.FormattingEnabled = true;
+            this.Status.Items.AddRange(new object[] {
+            "waiting for confirmation",
+            "confirmed",
+            "rescheduled",
+            "cancelled",
+            "passed"});
+            this.Status.Location = new System.Drawing.Point(1127, 605);
+            this.Status.Margin = new System.Windows.Forms.Padding(4);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(175, 30);
+            this.Status.TabIndex = 52;
+            this.Status.Text = "Select";
+            this.Status.SelectedIndexChanged += new System.EventHandler(this.Status_SelectedIndexChanged);
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.BackColor = System.Drawing.Color.Azure;
+            this.CustomerName.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.CustomerName.FormattingEnabled = true;
+            
+            this.CustomerName.Location = new System.Drawing.Point(165, 601);
+            this.CustomerName.Margin = new System.Windows.Forms.Padding(4);
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.Size = new System.Drawing.Size(175, 30);
+            this.CustomerName.TabIndex = 53;
+            this.CustomerName.Text = "Select";
+            // 
+            // VenueName
+            // 
+            this.VenueName.BackColor = System.Drawing.Color.Azure;
+            this.VenueName.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VenueName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.VenueName.FormattingEnabled = true;
+            this.VenueName.Items.AddRange(new object[] {
+            "waiting for confirmation",
+            "confirmed",
+            "rescheduled",
+            "cancelled",
+            "passed"});
+            this.VenueName.Location = new System.Drawing.Point(1098, 517);
+            this.VenueName.Margin = new System.Windows.Forms.Padding(4);
+            this.VenueName.Name = "VenueName";
+            this.VenueName.Size = new System.Drawing.Size(175, 30);
+            this.VenueName.TabIndex = 54;
+            this.VenueName.Text = "Select";
+            this.VenueName.SelectedIndexChanged += new System.EventHandler(this.VenueName_SelectedIndexChanged);
             // 
             // eventsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 697);
+            this.Controls.Add(this.VenueName);
+            this.Controls.Add(this.CustomerName);
+            this.Controls.Add(this.Status);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnUpdate);
@@ -341,15 +370,12 @@
             this.Controls.Add(this.Date);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.Status);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CustomerId);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.VenueName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.VenueId);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.CustomerName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.EventName);
             this.Controls.Add(this.dataGridView1);
@@ -370,15 +396,12 @@
         private System.Windows.Forms.TextBox EventName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox CustomerName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox VenueId;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox VenueName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CustomerId;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox Status;
         private System.Windows.Forms.DateTimePicker Date;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox Duration;
@@ -387,5 +410,8 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ComboBox Status;
+        private System.Windows.Forms.ComboBox CustomerName;
+        private System.Windows.Forms.ComboBox VenueName;
     }
 }

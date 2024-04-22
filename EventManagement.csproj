@@ -54,23 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomersManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomersManagement.Designer.cs">
+      <DependentUpon>CustomersManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="eventsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="eventsManagement.Designer.cs">
       <DependentUpon>eventsManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -80,11 +74,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VenuesManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VenuesManagement.Designer.cs">
+      <DependentUpon>VenuesManagement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomersManagement.resx">
+      <DependentUpon>CustomersManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="eventsManagement.resx">
       <DependentUpon>eventsManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -98,6 +98,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VenuesManagement.resx">
+      <DependentUpon>VenuesManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

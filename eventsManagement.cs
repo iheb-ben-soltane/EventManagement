@@ -14,11 +14,11 @@ namespace EventManagement
 {
     public partial class eventsManagement : Form
     {
-        private SqlConnection cn = new SqlConnection("Data Source=LAPTOP-G42PFL3;Initial Catalog=EventManagement;Integrated Security=True;");
         private int idUpdate = 0;
         public eventsManagement()
         {
             InitializeComponent();
+            LoadCustomerNames();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace EventManagement
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 Console.WriteLine("event added with succss !");
-
+                LoadDataIntoDataGridView();
                 // Optionally, clear the form or refresh the DataGridView to reflect the new data
                 // ClearForm();
                 // RefreshDataGridView();
@@ -251,10 +251,49 @@ namespace EventManagement
             }
         }
 
+        private void Status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CustomerName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+
+        }
 
 
+        private void LoadCustomerNames()
+        {
+            try
+            {
+                cn.Open();
+                string select = "SELECT FirstName + ' ' + LastName AS FullName  FROM Customers";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(select, cn);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                cn.Close();
+
+                // Clear the existing items in the control to avoid duplicates
+                this.CustomerName.Items.Clear();
+
+                // Add each row from the DataTable to the control
+                foreach (DataRow row in table.Rows)
+                {
+                    this.CustomerName.Items.Add(row["FullName"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+        private void VenueName_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
 
+        }
 
     }
 }
