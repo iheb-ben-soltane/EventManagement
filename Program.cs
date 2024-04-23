@@ -16,7 +16,7 @@ namespace EventManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new eventsManagement());
+            Application.Run(new login());
         }
     }
 }

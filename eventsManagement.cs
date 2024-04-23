@@ -295,5 +295,18 @@ namespace EventManagement
 
         }
 
+        private void Venues_Click(object sender, EventArgs e)
+        {
+            VenuesManagement VenuesFrom = new VenuesManagement();
+            VenuesFrom.ShowDialog();
+
+        }
+
+        private void Customers_Click(object sender, EventArgs e)
+        {
+            CustomersManagement CustomersFrom = new CustomersManagement();
+            CustomersFrom.ShowDialog();
+
+        }
     }
 }

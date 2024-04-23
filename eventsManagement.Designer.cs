@@ -56,6 +56,8 @@ namespace EventManagement
             this.Status = new System.Windows.Forms.ComboBox();
             this.CustomerName = new System.Windows.Forms.ComboBox();
             this.VenueName = new System.Windows.Forms.ComboBox();
+            this.Customers = new System.Windows.Forms.Button();
+            this.Venues = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +76,7 @@ namespace EventManagement
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(69, 63);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -87,7 +89,7 @@ namespace EventManagement
             this.EventName.BackColor = System.Drawing.Color.Azure;
             this.EventName.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.EventName.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventName.Location = new System.Drawing.Point(119, 518);
+            this.EventName.Location = new System.Drawing.Point(183, 528);
             this.EventName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EventName.Name = "EventName";
             this.EventName.Size = new System.Drawing.Size(175, 30);
@@ -98,7 +100,7 @@ namespace EventManagement
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(29, 518);
+            this.label1.Location = new System.Drawing.Point(101, 532);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 26);
             this.label1.TabIndex = 33;
@@ -110,7 +112,7 @@ namespace EventManagement
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(2, 601);
+            this.label2.Location = new System.Drawing.Point(12, 629);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 26);
             this.label2.TabIndex = 35;
@@ -122,7 +124,7 @@ namespace EventManagement
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(652, 518);
+            this.label3.Location = new System.Drawing.Point(1131, 518);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 26);
             this.label3.TabIndex = 37;
@@ -133,7 +135,7 @@ namespace EventManagement
             this.VenueId.BackColor = System.Drawing.Color.Azure;
             this.VenueId.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.VenueId.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VenueId.Location = new System.Drawing.Point(742, 518);
+            this.VenueId.Location = new System.Drawing.Point(1242, 514);
             this.VenueId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VenueId.Name = "VenueId";
             this.VenueId.Size = new System.Drawing.Size(175, 30);
@@ -144,7 +146,7 @@ namespace EventManagement
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Location = new System.Drawing.Point(966, 518);
+            this.label4.Location = new System.Drawing.Point(731, 522);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 26);
             this.label4.TabIndex = 39;
@@ -155,7 +157,7 @@ namespace EventManagement
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label5.Location = new System.Drawing.Point(365, 605);
+            this.label5.Location = new System.Drawing.Point(387, 629);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 26);
             this.label5.TabIndex = 41;
@@ -166,7 +168,7 @@ namespace EventManagement
             this.CustomerId.BackColor = System.Drawing.Color.Azure;
             this.CustomerId.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.CustomerId.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerId.Location = new System.Drawing.Point(490, 605);
+            this.CustomerId.Location = new System.Drawing.Point(528, 625);
             this.CustomerId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerId.Name = "CustomerId";
             this.CustomerId.Size = new System.Drawing.Size(175, 30);
@@ -178,7 +180,7 @@ namespace EventManagement
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label6.Location = new System.Drawing.Point(688, 609);
+            this.label6.Location = new System.Drawing.Point(763, 629);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 26);
             this.label6.TabIndex = 43;
@@ -193,7 +195,7 @@ namespace EventManagement
             this.Date.CalendarTitleForeColor = System.Drawing.Color.Blue;
             this.Date.CalendarTrailingForeColor = System.Drawing.Color.Coral;
             this.Date.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date.Location = new System.Drawing.Point(435, 518);
+            this.Date.Location = new System.Drawing.Point(528, 525);
             this.Date.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(175, 30);
@@ -205,7 +207,7 @@ namespace EventManagement
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label7.Location = new System.Drawing.Point(361, 521);
+            this.label7.Location = new System.Drawing.Point(451, 525);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 26);
             this.label7.TabIndex = 44;
@@ -217,7 +219,7 @@ namespace EventManagement
             this.Duration.BackColor = System.Drawing.Color.Azure;
             this.Duration.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.Duration.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Duration.Location = new System.Drawing.Point(809, 605);
+            this.Duration.Location = new System.Drawing.Point(881, 629);
             this.Duration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Duration.Name = "Duration";
             this.Duration.Size = new System.Drawing.Size(175, 30);
@@ -228,7 +230,7 @@ namespace EventManagement
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label8.Location = new System.Drawing.Point(1001, 605);
+            this.label8.Location = new System.Drawing.Point(1142, 629);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 26);
             this.label8.TabIndex = 47;
@@ -242,7 +244,7 @@ namespace EventManagement
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnSave.Location = new System.Drawing.Point(467, 645);
+            this.btnSave.Location = new System.Drawing.Point(1307, 314);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(143, 41);
@@ -258,7 +260,7 @@ namespace EventManagement
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnUpdate.Location = new System.Drawing.Point(657, 645);
+            this.btnUpdate.Location = new System.Drawing.Point(1307, 228);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(143, 41);
@@ -274,7 +276,7 @@ namespace EventManagement
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnEdit.Location = new System.Drawing.Point(657, 645);
+            this.btnEdit.Location = new System.Drawing.Point(1307, 228);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(143, 41);
@@ -290,7 +292,7 @@ namespace EventManagement
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnDelete.Location = new System.Drawing.Point(841, 645);
+            this.btnDelete.Location = new System.Drawing.Point(1307, 150);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(143, 41);
@@ -311,7 +313,7 @@ namespace EventManagement
             "rescheduled",
             "cancelled",
             "passed"});
-            this.Status.Location = new System.Drawing.Point(1127, 605);
+            this.Status.Location = new System.Drawing.Point(1242, 625);
             this.Status.Margin = new System.Windows.Forms.Padding(4);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(175, 30);
@@ -325,8 +327,7 @@ namespace EventManagement
             this.CustomerName.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerName.ForeColor = System.Drawing.SystemColors.WindowText;
             this.CustomerName.FormattingEnabled = true;
-            
-            this.CustomerName.Location = new System.Drawing.Point(165, 601);
+            this.CustomerName.Location = new System.Drawing.Point(183, 625);
             this.CustomerName.Margin = new System.Windows.Forms.Padding(4);
             this.CustomerName.Name = "CustomerName";
             this.CustomerName.Size = new System.Drawing.Size(175, 30);
@@ -345,7 +346,7 @@ namespace EventManagement
             "rescheduled",
             "cancelled",
             "passed"});
-            this.VenueName.Location = new System.Drawing.Point(1098, 517);
+            this.VenueName.Location = new System.Drawing.Point(881, 518);
             this.VenueName.Margin = new System.Windows.Forms.Padding(4);
             this.VenueName.Name = "VenueName";
             this.VenueName.Size = new System.Drawing.Size(175, 30);
@@ -353,11 +354,45 @@ namespace EventManagement
             this.VenueName.Text = "Select";
             this.VenueName.SelectedIndexChanged += new System.EventHandler(this.VenueName_SelectedIndexChanged);
             // 
+            // Customers
+            // 
+            this.Customers.BackColor = System.Drawing.Color.LightYellow;
+            this.Customers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Customers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Customers.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Customers.ForeColor = System.Drawing.Color.DarkBlue;
+            this.Customers.Location = new System.Drawing.Point(183, 11);
+            this.Customers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Customers.Name = "Customers";
+            this.Customers.Size = new System.Drawing.Size(143, 41);
+            this.Customers.TabIndex = 55;
+            this.Customers.Text = "Customers";
+            this.Customers.UseVisualStyleBackColor = false;
+            this.Customers.Click += new System.EventHandler(this.Customers_Click);
+            // 
+            // Venues
+            // 
+            this.Venues.BackColor = System.Drawing.Color.LightYellow;
+            this.Venues.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Venues.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Venues.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Venues.ForeColor = System.Drawing.Color.DarkBlue;
+            this.Venues.Location = new System.Drawing.Point(34, 11);
+            this.Venues.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Venues.Name = "Venues";
+            this.Venues.Size = new System.Drawing.Size(143, 41);
+            this.Venues.TabIndex = 56;
+            this.Venues.Text = "Venues";
+            this.Venues.UseVisualStyleBackColor = false;
+            this.Venues.Click += new System.EventHandler(this.Venues_Click);
+            // 
             // eventsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1378, 697);
+            this.ClientSize = new System.Drawing.Size(1472, 697);
+            this.Controls.Add(this.Venues);
+            this.Controls.Add(this.Customers);
             this.Controls.Add(this.VenueName);
             this.Controls.Add(this.CustomerName);
             this.Controls.Add(this.Status);
@@ -381,6 +416,7 @@ namespace EventManagement
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label12);
             this.Name = "eventsManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Events Management";
             this.Load += new System.EventHandler(this.eventsManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -413,5 +449,7 @@ namespace EventManagement
         private System.Windows.Forms.ComboBox Status;
         private System.Windows.Forms.ComboBox CustomerName;
         private System.Windows.Forms.ComboBox VenueName;
+        private Button Customers;
+        private Button Venues;
     }
 }

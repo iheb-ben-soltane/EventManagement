@@ -55,15 +55,14 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnDelete.Location = new System.Drawing.Point(901, 691);
+            this.btnDelete.Location = new System.Drawing.Point(592, 691);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(143, 41);
             this.btnDelete.TabIndex = 73;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false; 
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-
             // 
             // btnEdit
             // 
@@ -72,7 +71,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnEdit.Location = new System.Drawing.Point(717, 691);
+            this.btnEdit.Location = new System.Drawing.Point(383, 691);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(143, 41);
@@ -80,8 +79,6 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_click);
-
-
             // 
             // btnUpdate
             // 
@@ -90,7 +87,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnUpdate.Location = new System.Drawing.Point(717, 691);
+            this.btnUpdate.Location = new System.Drawing.Point(383, 691);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(143, 41);
@@ -98,7 +95,6 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_click);
-
             // 
             // btnSave
             // 
@@ -107,7 +103,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnSave.Location = new System.Drawing.Point(527, 691);
+            this.btnSave.Location = new System.Drawing.Point(162, 691);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(143, 41);
@@ -115,8 +111,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-
-
             // 
             // label6
             // 
@@ -133,7 +127,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label5.Location = new System.Drawing.Point(819, 655);
+            this.label5.Location = new System.Drawing.Point(1015, 668);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(158, 26);
             this.label5.TabIndex = 64;
@@ -144,7 +138,7 @@
             this.VenueManagerPhone.BackColor = System.Drawing.Color.Azure;
             this.VenueManagerPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.VenueManagerPhone.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VenueManagerPhone.Location = new System.Drawing.Point(998, 651);
+            this.VenueManagerPhone.Location = new System.Drawing.Point(1194, 664);
             this.VenueManagerPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VenueManagerPhone.Name = "VenueManagerPhone";
             this.VenueManagerPhone.Size = new System.Drawing.Size(175, 30);
@@ -155,7 +149,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Location = new System.Drawing.Point(1026, 564);
+            this.label4.Location = new System.Drawing.Point(712, 572);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 26);
             this.label4.TabIndex = 62;
@@ -166,10 +160,11 @@
             this.VenueLocation.BackColor = System.Drawing.Color.Azure;
             this.VenueLocation.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.VenueLocation.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VenueLocation.Location = new System.Drawing.Point(1187, 564);
+            this.VenueLocation.Location = new System.Drawing.Point(808, 572);
             this.VenueLocation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.VenueLocation.Multiline = true;
             this.VenueLocation.Name = "VenueLocation";
-            this.VenueLocation.Size = new System.Drawing.Size(175, 30);
+            this.VenueLocation.Size = new System.Drawing.Size(175, 122);
             this.VenueLocation.TabIndex = 61;
             // 
             // label3
@@ -177,7 +172,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(712, 564);
+            this.label3.Location = new System.Drawing.Point(391, 572);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 26);
             this.label3.TabIndex = 60;
@@ -188,18 +183,19 @@
             this.VenueCapacity.BackColor = System.Drawing.Color.Azure;
             this.VenueCapacity.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.VenueCapacity.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VenueCapacity.Location = new System.Drawing.Point(802, 564);
+            this.VenueCapacity.Location = new System.Drawing.Point(486, 568);
             this.VenueCapacity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VenueCapacity.Name = "VenueCapacity";
             this.VenueCapacity.Size = new System.Drawing.Size(175, 30);
             this.VenueCapacity.TabIndex = 59;
+            this.VenueCapacity.TextChanged += new System.EventHandler(this.VenueCapacity_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(331, 651);
+            this.label2.Location = new System.Drawing.Point(1079, 572);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 26);
             this.label2.TabIndex = 58;
@@ -210,7 +206,7 @@
             this.VenueManager.BackColor = System.Drawing.Color.Azure;
             this.VenueManager.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.VenueManager.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VenueManager.Location = new System.Drawing.Point(458, 647);
+            this.VenueManager.Location = new System.Drawing.Point(1194, 568);
             this.VenueManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VenueManager.Name = "VenueManager";
             this.VenueManager.Size = new System.Drawing.Size(175, 30);
@@ -232,7 +228,7 @@
             this.VenueName.BackColor = System.Drawing.Color.Azure;
             this.VenueName.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.VenueName.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VenueName.Location = new System.Drawing.Point(179, 564);
+            this.VenueName.Location = new System.Drawing.Point(162, 564);
             this.VenueName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VenueName.Name = "VenueName";
             this.VenueName.Size = new System.Drawing.Size(175, 30);
@@ -283,6 +279,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label12);
             this.Name = "VenuesManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VenuesManagement";
             this.Load += new System.EventHandler(this.VenuesManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

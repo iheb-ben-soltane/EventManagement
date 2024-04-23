@@ -160,5 +160,10 @@ namespace EventManagement
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void VenueCapacity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
