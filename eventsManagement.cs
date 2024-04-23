@@ -19,6 +19,9 @@ namespace EventManagement
         {
             InitializeComponent();
             LoadCustomerNames();
+            LoadVenueNames();
+            CustomerName.SelectedIndexChanged += CustomerName_SelectedIndexChanged;
+            VenueName.SelectedIndexChanged += VenueName_SelectedIndexChanged;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -59,13 +62,13 @@ namespace EventManagement
         private void eventsManagement_Load(object sender, EventArgs e)
         {
             LoadDataIntoDataGridView();
-           
+
 
         }
 
         private void btnUpdate_click(object sender, EventArgs e)
         {
-                UpdateSelectedEvent();
+            UpdateSelectedEvent();
             btnSave.Visible = true;
             btnUpdate.Visible = false;
             btnEdit.Visible = true;
@@ -102,7 +105,7 @@ namespace EventManagement
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[Events] (Name, Date, VenueId, VenueName, CustomerName, CustomerId, Duration, Status) VALUES (@Name, @Date, @VenueId, @VenueName, @CustomerName, @CustomerId, @Duration, @Status)", cn);
-              
+
                 cmd.Parameters.AddWithValue("@Name", EventName.Text);
                 cmd.Parameters.AddWithValue("@Date", Date.Value);
                 cmd.Parameters.AddWithValue("@VenueId", VenueId.Text);
@@ -126,7 +129,7 @@ namespace EventManagement
         }
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-           
+
         }
 
 
@@ -139,7 +142,7 @@ namespace EventManagement
             try
             {
                 cn.Open();
-                string select = "SELECT * FROM Events"; 
+                string select = "SELECT * FROM Events";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(select, cn);
                 DataTable table = new DataTable();
                 table.Locale = System.Globalization.CultureInfo.InvariantCulture;
@@ -258,7 +261,43 @@ namespace EventManagement
 
         private void CustomerName_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
+            try
+            {
+
+                cn.Open();
+
+
+                string selectCustomerId = "SELECT Id FROM Customers WHERE FirstName + ' ' + LastName = @FullName";
+
+
+                SqlCommand cmd = new SqlCommand(selectCustomerId, cn);
+
+
+                cmd.Parameters.AddWithValue("@FullName", CustomerName.SelectedItem.ToString());
+
+
+                object result = cmd.ExecuteScalar();
+
+
+                if (result != null)
+                {
+
+                    CustomerId.Text = result.ToString();
+                }
+                else
+                {
+
+                    MessageBox.Show("Customer ID not found.");
+                }
+
+
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
 
@@ -291,22 +330,82 @@ namespace EventManagement
         }
         private void VenueName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
 
+                cn.Open();
+
+
+                string selectVeneuId = "SELECT Id FROM Venues WHERE Name = @VenueName";
+
+
+                SqlCommand cmd = new SqlCommand(selectVeneuId, cn);
+
+
+                cmd.Parameters.AddWithValue("@VenueName", VenueName.SelectedItem.ToString());
+
+
+                object result = cmd.ExecuteScalar();
+
+
+                if (result != null)
+                {
+
+                    VenueId.Text = result.ToString();
+                }
+                else
+                {
+
+                    MessageBox.Show("Venue ID not found.");
+                }
+
+
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
-
-        private void Venues_Click(object sender, EventArgs e)
+        private void LoadVenueNames()
         {
-            VenuesManagement VenuesFrom = new VenuesManagement();
-            VenuesFrom.ShowDialog();
+            try
+            {
+                cn.Open();
+                string select = "SELECT Name AS VenueName  FROM Venues";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(select, cn);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                cn.Close();
 
+                // Clear the existing items in the control to avoid duplicates
+                this.VenueName.Items.Clear();
+
+                // Add each row from the DataTable to the control
+                foreach (DataRow row in table.Rows)
+                {
+                    this.VenueName.Items.Add(row["VenueName"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void Customers_Click(object sender, EventArgs e)
         {
-            CustomersManagement CustomersFrom = new CustomersManagement();
-            CustomersFrom.ShowDialog();
+            CustomersManagement CustomersManagementFrom = new CustomersManagement();
+            CustomersManagementFrom.ShowDialog();
+        }
 
+        private void Venues_Click(object sender, EventArgs e)
+        {
+            VenuesManagement VenuesManagementFrom = new VenuesManagement();
+            VenuesManagementFrom.ShowDialog();
         }
     }
 }
